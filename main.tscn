@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+
+[node name="Main" type="Node"]
+script = ExtResource( 1 )
+
+[node name="DownLayer" type="CanvasLayer" parent="."]
+
+[node name="SceneLayer" type="CanvasLayer" parent="."]
+
+[node name="WindowLayer" type="CanvasLayer" parent="."]
+
+[node name="PopUpLayer" type="CanvasLayer" parent="."]

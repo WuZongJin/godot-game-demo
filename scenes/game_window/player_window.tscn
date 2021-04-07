@@ -1,0 +1,596 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://game/components/ui_components_tool/tiled_texture.gd" type="Script" id=1]
+[ext_resource path="res://assert/font/pingfangSC-standard-cn.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://game/components/ui_components/property_bar.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assert/alta_resource/ui_texture/ui.sprites/ui_window_title_left.tres" type="Texture" id=5]
+[ext_resource path="res://assert/alta_resource/ui_texture/ui.sprites/ui_window_title_midle.tres" type="Texture" id=6]
+[ext_resource path="res://assert/alta_resource/ui_texture/ui.sprites/ui_window_title_right_without_btn.tres" type="Texture" id=7]
+[ext_resource path="res://assert/alta_resource/ui_texture/ui.sprites/ui_window_title_right_with_btn.tres" type="Texture" id=8]
+[ext_resource path="res://assert/alta_resource/ui_texture/ui.sprites/ui_pannel.tres" type="Texture" id=9]
+[ext_resource path="res://assert/alta_resource/ui_texture/ui.sprites/ui_window_title_knodl.tres" type="Texture" id=10]
+[ext_resource path="res://game/components/ui_components/ItemGraid.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/game_window/RolerWin.gd" type="Script" id=12]
+[ext_resource path="res://assert/alta_resource/ui_texture/ui.sprites/ui_window_title_close_btn_hover.tres" type="Texture" id=13]
+[ext_resource path="res://assert/alta_resource/ui_texture/ui.sprites/ui_window_title_close_btn_normal.tres" type="Texture" id=14]
+[ext_resource path="res://assert/alta_resource/ui_texture/ui.sprites/ui_window_title_close_btn_pressed.tres" type="Texture" id=15]
+
+
+[sub_resource type="DynamicFont" id=3]
+size = 42
+font_data = ExtResource( 3 )
+
+[node name="RolerWindow" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -0.297318
+margin_bottom = -0.297302
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PropertyWin" type="Control" parent="."]
+margin_left = 620.0
+margin_top = 40.0
+margin_right = 980.0
+margin_bottom = 540.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WindowTitle" type="Control" parent="PropertyWin"]
+margin_right = 360.0
+margin_bottom = 64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="PropertyWin/WindowTitle"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -33.0
+margin_right = 40.0
+margin_bottom = 33.0
+texture = ExtResource( 5 )
+
+[node name="Control" type="Control" parent="PropertyWin/WindowTitle"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -148.0
+margin_top = -33.0
+margin_right = 108.0
+margin_bottom = 33.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+texture = ExtResource( 6 )
+width = 256.0
+height = 66.0
+
+[node name="TextureRect2" type="TextureRect" parent="PropertyWin/WindowTitle"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -72.0
+margin_top = -33.0
+margin_right = -3.00003
+margin_bottom = 31.0
+texture = ExtResource( 8 )
+
+[node name="TextureButton" type="TextureButton" parent="PropertyWin/WindowTitle/TextureRect2"]
+margin_left = 20.9025
+margin_top = 9.05392
+margin_right = 60.9025
+margin_bottom = 55.0539
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 15 )
+texture_hover = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PropertyWin/WindowTitle"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -33.0
+margin_right = 300.0
+margin_bottom = 33.0
+custom_fonts/font = SubResource( 3 )
+text = "玩家窗口"
+align = 1
+valign = 1
+
+[node name="WindowMain" type="Control" parent="PropertyWin"]
+margin_left = 20.0
+margin_top = 66.0
+margin_right = 320.0
+margin_bottom = 386.0
+rect_min_size = Vector2( 300, 420 )
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="Control" parent="PropertyWin/WindowMain"]
+margin_left = -9.92181
+margin_right = 310.078
+margin_bottom = 400.0
+rect_min_size = Vector2( 0, 420 )
+
+[node name="Control" type="Control" parent="PropertyWin/WindowMain/bg"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -70.0
+margin_top = -4.0
+margin_right = 70.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+texture = ExtResource( 10 )
+width = 140
+height = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PropertyWin/WindowMain/bg"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 96, 96 )
+patch_margin_left = 33
+patch_margin_top = 25
+patch_margin_right = 30
+patch_margin_bottom = 39
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PropertyWin/WindowMain"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -101.0
+margin_top = 20.0
+margin_right = 132.0
+margin_bottom = 44.0
+custom_constants/separation = 70
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="VBoxContainer" parent="PropertyWin/WindowMain/HBoxContainer"]
+margin_right = 72.0
+margin_bottom = 92.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PropertyBar2" parent="PropertyWin/WindowMain/HBoxContainer/Control" instance=ExtResource( 4 )]
+property_name = "体力"
+colorType = 1
+
+[node name="PropertyBar" parent="PropertyWin/WindowMain/HBoxContainer/Control" instance=ExtResource( 4 )]
+margin_top = 24.0
+margin_bottom = 44.0
+property_name = "力量"
+
+[node name="PropertyBar3" parent="PropertyWin/WindowMain/HBoxContainer/Control" instance=ExtResource( 4 )]
+margin_top = 48.0
+margin_bottom = 68.0
+property_name = "魔力"
+colorType = 1
+
+[node name="PropertyBar4" parent="PropertyWin/WindowMain/HBoxContainer/Control" instance=ExtResource( 4 )]
+margin_top = 72.0
+margin_bottom = 92.0
+property_name = "运气"
+colorType = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PropertyWin/WindowMain/HBoxContainer"]
+margin_left = 142.0
+margin_right = 214.0
+margin_bottom = 92.0
+
+[node name="PropertyBar" parent="PropertyWin/WindowMain/HBoxContainer/VBoxContainer" instance=ExtResource( 4 )]
+property_name = "法力"
+
+[node name="PropertyBar2" parent="PropertyWin/WindowMain/HBoxContainer/VBoxContainer" instance=ExtResource( 4 )]
+margin_top = 24.0
+margin_bottom = 44.0
+property_name = "敏捷"
+colorType = 2
+
+[node name="PropertyBar3" parent="PropertyWin/WindowMain/HBoxContainer/VBoxContainer" instance=ExtResource( 4 )]
+margin_top = 48.0
+margin_bottom = 68.0
+cur_value = 10
+property_name = "物防"
+
+[node name="PropertyBar4" parent="PropertyWin/WindowMain/HBoxContainer/VBoxContainer" instance=ExtResource( 4 )]
+margin_top = 72.0
+margin_bottom = 92.0
+property_name = "魔防"
+colorType = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PropertyWin/WindowMain"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -150.0
+margin_top = 150.0
+margin_right = 150.0
+margin_bottom = 270.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PropertyWin/WindowMain/HBoxContainer2"]
+margin_right = 148.0
+margin_bottom = 120.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="PropertyWin/WindowMain/HBoxContainer2/VBoxContainer"]
+margin_right = 148.0
+margin_bottom = 14.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PropertyWin/WindowMain/HBoxContainer2"]
+margin_left = 152.0
+margin_right = 300.0
+margin_bottom = 120.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="PropertyWin/WindowMain/HBoxContainer2/VBoxContainer2"]
+margin_right = 148.0
+margin_bottom = 14.0
+
+[node name="RolerWin" type="Control" parent="."]
+margin_left = 69.2923
+margin_top = 41.2614
+margin_right = 569.292
+margin_bottom = 541.261
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WindowTitle" type="Control" parent="RolerWin"]
+margin_right = 512.0
+margin_bottom = 64.0
+
+[node name="TextureRect" type="TextureRect" parent="RolerWin/WindowTitle"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -32.0
+margin_right = 32.0
+margin_bottom = 33.0
+texture = ExtResource( 5 )
+
+[node name="Control" type="Control" parent="RolerWin/WindowTitle"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -224.0
+margin_top = -32.0
+margin_right = 224.0
+margin_bottom = 32.0
+script = ExtResource( 1 )
+texture = ExtResource( 6 )
+width = 448
+height = 64
+
+[node name="TextureRect2" type="TextureRect" parent="RolerWin/WindowTitle"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -32.0
+margin_top = -32.0
+margin_bottom = 32.0
+texture = ExtResource( 7 )
+
+[node name="MarginContainer" type="MarginContainer" parent="RolerWin"]
+margin_left = 286.0
+margin_top = 64.0
+margin_right = 486.0
+margin_bottom = 484.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="RolerWin/MarginContainer"]
+margin_right = 200.0
+margin_bottom = 420.0
+custom_constants/margin_top = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="RolerWin/MarginContainer/MarginContainer"]
+margin_top = 4.0
+margin_right = 200.0
+margin_bottom = 420.0
+texture = ExtResource( 9 )
+patch_margin_left = 32
+patch_margin_top = 19
+patch_margin_right = 31
+patch_margin_bottom = 35
+
+[node name="Control" type="Control" parent="RolerWin/MarginContainer"]
+margin_left = 40.0
+margin_right = 160.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 120, 4 )
+size_flags_horizontal = 4
+size_flags_vertical = 0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+texture = ExtResource( 10 )
+width = 120
+height = 4
+
+[node name="MarginContainer2" type="MarginContainer" parent="RolerWin"]
+margin_left = 32.0
+margin_top = 64.0
+margin_right = 272.0
+margin_bottom = 184.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="RolerWin/MarginContainer2"]
+margin_left = 60.0
+margin_right = 180.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 120, 4 )
+size_flags_horizontal = 4
+size_flags_vertical = 0
+script = ExtResource( 1 )
+texture = ExtResource( 10 )
+width = 120
+height = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="RolerWin/MarginContainer2"]
+margin_right = 240.0
+margin_bottom = 120.0
+custom_constants/margin_top = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="RolerWin/MarginContainer2/MarginContainer"]
+margin_top = 4.0
+margin_right = 240.0
+margin_bottom = 120.0
+texture = ExtResource( 9 )
+patch_margin_left = 31
+patch_margin_top = 22
+patch_margin_right = 31
+patch_margin_bottom = 33
+
+[node name="MarginContainer3" type="MarginContainer" parent="RolerWin"]
+margin_left = 32.0
+margin_top = 184.0
+margin_right = 272.0
+margin_bottom = 484.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="RolerWin/MarginContainer3"]
+margin_right = 240.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 240, 300 )
+custom_constants/margin_top = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="RolerWin/MarginContainer3/MarginContainer"]
+margin_top = 4.0
+margin_right = 240.0
+margin_bottom = 300.0
+texture = ExtResource( 9 )
+patch_margin_left = 39
+patch_margin_top = 36
+patch_margin_right = 34
+patch_margin_bottom = 37
+
+[node name="GridContainer" type="GridContainer" parent="RolerWin/MarginContainer3/MarginContainer"]
+margin_left = 34.0
+margin_top = 22.0
+margin_right = 206.0
+margin_bottom = 282.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/vseparation = 4
+custom_constants/hseparation = 4
+columns = 4
+
+[node name="ItemGrid1" parent="RolerWin/MarginContainer3/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ItemGrid2" parent="RolerWin/MarginContainer3/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 44.0
+margin_right = 84.0
+margin_bottom = 40.0
+
+[node name="ItemGrid3" parent="RolerWin/MarginContainer3/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 88.0
+margin_right = 128.0
+margin_bottom = 40.0
+
+[node name="ItemGrid4" parent="RolerWin/MarginContainer3/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 132.0
+margin_right = 172.0
+margin_bottom = 40.0
+
+[node name="ItemGrid5" parent="RolerWin/MarginContainer3/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 44.0
+margin_right = 40.0
+margin_bottom = 84.0
+
+[node name="ItemGrid6" parent="RolerWin/MarginContainer3/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 44.0
+margin_top = 44.0
+margin_right = 84.0
+margin_bottom = 84.0
+
+[node name="ItemGrid7" parent="RolerWin/MarginContainer3/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 88.0
+margin_top = 44.0
+margin_right = 128.0
+margin_bottom = 84.0
+
+[node name="ItemGrid8" parent="RolerWin/MarginContainer3/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 132.0
+margin_top = 44.0
+margin_right = 172.0
+margin_bottom = 84.0
+
+[node name="ItemGrid9" parent="RolerWin/MarginContainer3/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 88.0
+margin_right = 40.0
+margin_bottom = 128.0
+
+[node name="ItemGrid10" parent="RolerWin/MarginContainer3/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 44.0
+margin_top = 88.0
+margin_right = 84.0
+margin_bottom = 128.0
+
+[node name="ItemGrid11" parent="RolerWin/MarginContainer3/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 88.0
+margin_top = 88.0
+margin_right = 128.0
+margin_bottom = 128.0
+
+[node name="ItemGrid12" parent="RolerWin/MarginContainer3/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 132.0
+margin_top = 88.0
+margin_right = 172.0
+margin_bottom = 128.0
+
+[node name="ItemGrid13" parent="RolerWin/MarginContainer3/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 132.0
+margin_right = 40.0
+margin_bottom = 172.0
+
+[node name="ItemGrid14" parent="RolerWin/MarginContainer3/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 44.0
+margin_top = 132.0
+margin_right = 84.0
+margin_bottom = 172.0
+
+[node name="ItemGrid15" parent="RolerWin/MarginContainer3/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 88.0
+margin_top = 132.0
+margin_right = 128.0
+margin_bottom = 172.0
+
+[node name="ItemGrid16" parent="RolerWin/MarginContainer3/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 132.0
+margin_top = 132.0
+margin_right = 172.0
+margin_bottom = 172.0
+
+[node name="ItemGrid17" parent="RolerWin/MarginContainer3/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 176.0
+margin_right = 40.0
+margin_bottom = 216.0
+
+[node name="ItemGrid18" parent="RolerWin/MarginContainer3/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 44.0
+margin_top = 176.0
+margin_right = 84.0
+margin_bottom = 216.0
+
+[node name="ItemGrid19" parent="RolerWin/MarginContainer3/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 88.0
+margin_top = 176.0
+margin_right = 128.0
+margin_bottom = 216.0
+
+[node name="ItemGrid20" parent="RolerWin/MarginContainer3/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 132.0
+margin_top = 176.0
+margin_right = 172.0
+margin_bottom = 216.0
+
+[node name="ItemGrid21" parent="RolerWin/MarginContainer3/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 220.0
+margin_right = 40.0
+margin_bottom = 260.0
+
+[node name="ItemGrid22" parent="RolerWin/MarginContainer3/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 44.0
+margin_top = 220.0
+margin_right = 84.0
+margin_bottom = 260.0
+
+[node name="ItemGrid23" parent="RolerWin/MarginContainer3/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 88.0
+margin_top = 220.0
+margin_right = 128.0
+margin_bottom = 260.0
+
+[node name="ItemGrid24" parent="RolerWin/MarginContainer3/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 132.0
+margin_top = 220.0
+margin_right = 172.0
+margin_bottom = 260.0
+
+[node name="Control" type="Control" parent="RolerWin/MarginContainer3"]
+margin_left = 60.0
+margin_right = 180.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 120, 4 )
+size_flags_horizontal = 4
+size_flags_vertical = 0
+script = ExtResource( 1 )
+texture = ExtResource( 10 )
+width = 120
+height = 4

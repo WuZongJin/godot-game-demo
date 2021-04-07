@@ -1,0 +1,544 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://assert/alta_resource/ui_texture/ui.sprites/ui_button_type1.tres" type="Texture" id=1]
+[ext_resource path="res://scenes/base_ui/game_title_scene.gd" type="Script" id=2]
+[ext_resource path="res://assert/font/pingfangSC-standard-cn.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assert/font/IPix.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assert/textures/Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" type="Texture" id=5]
+[ext_resource path="res://assert/textures/Treasure Hunters/Palm Tree Island/Sprites/Background/BG Image.png" type="Texture" id=6]
+[ext_resource path="res://assert/textures/Treasure Hunters/Palm Tree Island/Sprites/Background/Additional Sky.png" type="Texture" id=7]
+[ext_resource path="res://assert/textures/Treasure Hunters/Palm Tree Island/Sprites/Background/Additional Water.png" type="Texture" id=8]
+[ext_resource path="res://assert/textures/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 01.png" type="Texture" id=9]
+[ext_resource path="res://assert/textures/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 03.png" type="Texture" id=10]
+[ext_resource path="res://assert/textures/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 04.png" type="Texture" id=11]
+[ext_resource path="res://assert/textures/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 02.png" type="Texture" id=12]
+[ext_resource path="res://game/entities/map_item/tree/back_tree_regular.tscn" type="PackedScene" id=13]
+[ext_resource path="res://game/entities/map_item/tree/font_tree.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assert/textures/Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Bottom and Grass (32x32).png" type="Texture" id=15]
+[ext_resource path="res://assert/textures/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 01.png" type="Texture" id=16]
+[ext_resource path="res://assert/textures/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 04.png" type="Texture" id=17]
+[ext_resource path="res://assert/textures/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 03.png" type="Texture" id=18]
+[ext_resource path="res://assert/textures/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 06.png" type="Texture" id=19]
+[ext_resource path="res://assert/textures/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 05.png" type="Texture" id=20]
+[ext_resource path="res://assert/textures/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 02.png" type="Texture" id=21]
+[ext_resource path="res://game/components/ui_components_tool/base_button.gd" type="Script" id=22]
+
+
+
+[sub_resource type="Animation" id=1]
+resource_name = "anima"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1.41421, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 9 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 11 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "anima"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1.41421, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 9 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 11 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "anima"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1.41421, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 9 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 11 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "anima"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1.41421, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 9 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 11 ) ]
+}
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 16 ), ExtResource( 21 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 20 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="TileSet" id=6]
+0/name = "Terrain (32x32).png 0"
+0/texture = ExtResource( 5 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 544, 160 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 1
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 432, Vector2( 0, 1 ), 438, Vector2( 0, 2 ), 54, Vector2( 0, 4 ), 48, Vector2( 1, 0 ), 504, Vector2( 1, 1 ), 511, Vector2( 1, 2 ), 63, Vector2( 1, 4 ), 56, Vector2( 2, 0 ), 216, Vector2( 2, 1 ), 219, Vector2( 2, 2 ), 27, Vector2( 2, 4 ), 24, Vector2( 4, 0 ), 144, Vector2( 4, 1 ), 146, Vector2( 4, 2 ), 18, Vector2( 4, 4 ), 16, Vector2( 6, 0 ), 255, Vector2( 6, 1 ), 507, Vector2( 6, 3 ), 182, Vector2( 6, 4 ), 434, Vector2( 7, 0 ), 447, Vector2( 7, 1 ), 510, Vector2( 7, 3 ), 155, Vector2( 7, 4 ), 218, Vector2( 9, 0 ), 506, Vector2( 9, 1 ), 446, Vector2( 9, 3 ), 248, Vector2( 9, 4 ), 59, Vector2( 10, 0 ), 251, Vector2( 10, 1 ), 191, Vector2( 10, 3 ), 440, Vector2( 10, 4 ), 62, Vector2( 12, 0 ), 442, Vector2( 12, 1 ), 190, Vector2( 12, 3 ), 178, Vector2( 12, 4 ), 58, Vector2( 13, 0 ), 250, Vector2( 13, 1 ), 187, Vector2( 13, 3 ), 184, Vector2( 13, 4 ), 154, Vector2( 15, 0 ), 186, Vector2( 15, 1 ), 254, Vector2( 15, 3 ), 176, Vector2( 15, 4 ), 50, Vector2( 16, 1 ), 443, Vector2( 16, 3 ), 152, Vector2( 16, 4 ), 26 ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 32, 32 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Terrain (32x32).png 1"
+1/texture = ExtResource( 5 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 32, 32, 32, 32 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Terrain (32x32).png 2"
+2/texture = ExtResource( 5 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 32, 64, 32, 32 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "Terrain (32x32).png 3"
+3/texture = ExtResource( 5 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 32, 0, 32, 32 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+
+[sub_resource type="AtlasTexture" id=7]
+resource_local_to_scene = true
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=8]
+resource_local_to_scene = true
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 24
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 48
+outline_size = 1
+font_data = ExtResource( 3 )
+
+[node name="game_title_scene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -3.05176e-05
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackGround" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="BackGround"]
+scale = Vector2( 32, 18.75 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="BackGround"]
+position = Vector2( 0, 382 )
+scale = Vector2( 32, 6.79932 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="BackGround"]
+position = Vector2( 512.153, 415.872 )
+scale = Vector2( 2.66587, 1 )
+texture = ExtResource( 6 )
+
+[node name="Waterflection" type="Sprite" parent="BackGround"]
+position = Vector2( 85.079, 444.208 )
+texture = ExtResource( 9 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BackGround/Waterflection"]
+autoplay = "anima"
+anims/anima = SubResource( 1 )
+
+[node name="Waterflection2" type="Sprite" parent="BackGround"]
+position = Vector2( 888.937, 444.519 )
+texture = ExtResource( 9 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BackGround/Waterflection2"]
+autoplay = "anima"
+anims/anima = SubResource( 2 )
+
+[node name="Waterflection4" type="Sprite" parent="BackGround"]
+position = Vector2( 726.19, 444.519 )
+texture = ExtResource( 9 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BackGround/Waterflection4"]
+autoplay = "anima"
+anims/anima = SubResource( 3 )
+
+[node name="Waterflection3" type="Sprite" parent="BackGround"]
+position = Vector2( 256.467, 444.519 )
+texture = ExtResource( 9 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BackGround/Waterflection3"]
+autoplay = "anima"
+anims/anima = SubResource( 4 )
+
+[node name="Back" type="Node2D" parent="."]
+
+[node name="Back" type="Node2D" parent="Back"]
+
+[node name="back_tree_regular" parent="Back/Back" instance=ExtResource( 13 )]
+position = Vector2( 170.079, 421.015 )
+
+[node name="back_tree_regular2" parent="Back/Back" instance=ExtResource( 13 )]
+position = Vector2( 250.307, 421.015 )
+
+[node name="back_tree_regular3" parent="Back/Back" instance=ExtResource( 13 )]
+position = Vector2( 565.364, 421.015 )
+
+[node name="back_tree_regular4" parent="Back/Back" instance=ExtResource( 13 )]
+position = Vector2( 822.537, 421.015 )
+
+[node name="back_tree_regular5" parent="Back/Back" instance=ExtResource( 13 )]
+position = Vector2( 905.881, 421.015 )
+
+[node name="Back2" type="Node2D" parent="."]
+position = Vector2( 1024, 0 )
+
+[node name="Back" type="Node2D" parent="Back2"]
+
+[node name="back_tree_regular" parent="Back2/Back" instance=ExtResource( 13 )]
+position = Vector2( 170.079, 421.015 )
+
+[node name="back_tree_regular2" parent="Back2/Back" instance=ExtResource( 13 )]
+position = Vector2( 250.307, 421.015 )
+
+[node name="back_tree_regular3" parent="Back2/Back" instance=ExtResource( 13 )]
+position = Vector2( 565.364, 421.015 )
+
+[node name="back_tree_regular4" parent="Back2/Back" instance=ExtResource( 13 )]
+position = Vector2( 822.537, 421.015 )
+
+[node name="back_tree_regular5" parent="Back2/Back" instance=ExtResource( 13 )]
+position = Vector2( 905.881, 421.015 )
+
+[node name="Player" type="Node2D" parent="."]
+position = Vector2( 93.4693, 471.098 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Player"]
+frames = SubResource( 5 )
+playing = true
+
+[node name="Ground1" type="Node2D" parent="."]
+
+[node name="Ground" type="TileMap" parent="Ground1"]
+tile_set = SubResource( 6 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 1048575, 0, 0, 983040, 0, 1, 983041, 0, 1, 983042, 0, 1, 983043, 0, 1, 983044, 0, 1, 983045, 0, 1, 983046, 0, 1, 983047, 0, 1, 983048, 0, 1, 983049, 0, 1, 983050, 0, 1, 983051, 0, 1, 983052, 0, 1, 983053, 0, 1, 983054, 0, 1, 983055, 0, 1, 983056, 0, 1, 983057, 0, 1, 983058, 0, 1, 983059, 0, 1, 983060, 0, 1, 983061, 0, 1, 983062, 0, 1, 983063, 0, 1, 983064, 0, 1, 983065, 0, 1, 983066, 0, 1, 983067, 0, 1, 983068, 0, 1, 983069, 0, 1, 983070, 0, 1, 983071, 0, 1, 983072, 0, 2, 1114111, 0, 65536, 1048576, 0, 65537, 1048577, 0, 65537, 1048578, 0, 65537, 1048579, 0, 65537, 1048580, 0, 65537, 1048581, 0, 65537, 1048582, 0, 65537, 1048583, 0, 65537, 1048584, 0, 65537, 1048585, 0, 65537, 1048586, 0, 65537, 1048587, 0, 65537, 1048588, 0, 65537, 1048589, 0, 65537, 1048590, 0, 65537, 1048591, 0, 65537, 1048592, 0, 65537, 1048593, 0, 65537, 1048594, 0, 65537, 1048595, 0, 65537, 1048596, 0, 65537, 1048597, 0, 65537, 1048598, 0, 65537, 1048599, 0, 65537, 1048600, 0, 65537, 1048601, 0, 65537, 1048602, 0, 65537, 1048603, 0, 65537, 1048604, 0, 65537, 1048605, 0, 65537, 1048606, 0, 65537, 1048607, 0, 65537, 1048608, 0, 65538, 1179647, 0, 65536, 1114112, 0, 65537, 1114113, 0, 65537, 1114114, 0, 65537, 1114115, 0, 65537, 1114116, 0, 65537, 1114117, 0, 65537, 1114118, 0, 65537, 1114119, 0, 65537, 1114120, 0, 65537, 1114121, 0, 65537, 1114122, 0, 65537, 1114123, 0, 65537, 1114124, 0, 65537, 1114125, 0, 65537, 1114126, 0, 65537, 1114127, 0, 65537, 1114128, 0, 65537, 1114129, 0, 65537, 1114130, 0, 65537, 1114131, 0, 65537, 1114132, 0, 65537, 1114133, 0, 65537, 1114134, 0, 65537, 1114135, 0, 65537, 1114136, 0, 65537, 1114137, 0, 65537, 1114138, 0, 65537, 1114139, 0, 65537, 1114140, 0, 65537, 1114141, 0, 65537, 1114142, 0, 65537, 1114143, 0, 65537, 1114144, 0, 65538, 1245183, 0, 65536, 1179648, 0, 65537, 1179649, 0, 65537, 1179650, 0, 65537, 1179651, 0, 65537, 1179652, 0, 65537, 1179653, 0, 65537, 1179654, 0, 65537, 1179655, 0, 65537, 1179656, 0, 65537, 1179657, 0, 65537, 1179658, 0, 65537, 1179659, 0, 65537, 1179660, 0, 65537, 1179661, 0, 65537, 1179662, 0, 65537, 1179663, 0, 65537, 1179664, 0, 65537, 1179665, 0, 65537, 1179666, 0, 65537, 1179667, 0, 65537, 1179668, 0, 65537, 1179669, 0, 65537, 1179670, 0, 65537, 1179671, 0, 65537, 1179672, 0, 65537, 1179673, 0, 65537, 1179674, 0, 65537, 1179675, 0, 65537, 1179676, 0, 65537, 1179677, 0, 65537, 1179678, 0, 65537, 1179679, 0, 65537, 1179680, 0, 65538, 1310719, 0, 131072, 1245184, 0, 131073, 1245185, 0, 131073, 1245186, 0, 131073, 1245187, 0, 131073, 1245188, 0, 131073, 1245189, 0, 131073, 1245190, 0, 131073, 1245191, 0, 131073, 1245192, 0, 131073, 1245193, 0, 131073, 1245194, 0, 131073, 1245195, 0, 131073, 1245196, 0, 131073, 1245197, 0, 131073, 1245198, 0, 131073, 1245199, 0, 131073, 1245200, 0, 131073, 1245201, 0, 131073, 1245202, 0, 131073, 1245203, 0, 131073, 1245204, 0, 131073, 1245205, 0, 131073, 1245206, 0, 131073, 1245207, 0, 131073, 1245208, 0, 131073, 1245209, 0, 131073, 1245210, 0, 131073, 1245211, 0, 131073, 1245212, 0, 131073, 1245213, 0, 131073, 1245214, 0, 131073, 1245215, 0, 131073, 1245216, 0, 131074 )
+
+[node name="mask" type="Node2D" parent="Ground1"]
+
+[node name="Sprite" type="Sprite" parent="Ground1/mask"]
+position = Vector2( -32, 480 )
+texture = SubResource( 7 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="Ground1/mask"]
+position = Vector2( -32, 512 )
+scale = Vector2( 1, 4 )
+texture = SubResource( 8 )
+centered = false
+
+[node name="mask2" type="Node2D" parent="Ground1"]
+position = Vector2( 1056, 0 )
+
+[node name="Sprite" type="Sprite" parent="Ground1/mask2"]
+position = Vector2( -32, 480 )
+texture = SubResource( 7 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="Ground1/mask2"]
+position = Vector2( -32, 512 )
+scale = Vector2( 1, 4 )
+texture = SubResource( 8 )
+centered = false
+
+[node name="Front" type="Node2D" parent="Ground1"]
+
+[node name="Tree" type="Node2D" parent="Ground1/Front"]
+position = Vector2( 332.8, 421.015 )
+
+[node name="font_tree" parent="Ground1/Front/Tree" instance=ExtResource( 14 )]
+
+[node name="Sprite" type="Sprite" parent="Ground1/Front/Tree"]
+position = Vector2( 4, 32 )
+texture = ExtResource( 15 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 64 )
+
+[node name="Tree2" type="Node2D" parent="Ground1/Front"]
+position = Vector2( 762.128, 421.015 )
+
+[node name="font_tree" parent="Ground1/Front/Tree2" instance=ExtResource( 14 )]
+
+[node name="Sprite" type="Sprite" parent="Ground1/Front/Tree2"]
+position = Vector2( 4, 32 )
+texture = ExtResource( 15 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 64 )
+
+[node name="Ground2" type="Node2D" parent="."]
+position = Vector2( 1024, 0 )
+
+[node name="Ground" type="TileMap" parent="Ground2"]
+tile_set = SubResource( 6 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 1048575, 0, 0, 983040, 0, 1, 983041, 0, 1, 983042, 0, 1, 983043, 0, 1, 983044, 0, 1, 983045, 0, 1, 983046, 0, 1, 983047, 0, 1, 983048, 0, 1, 983049, 0, 1, 983050, 0, 1, 983051, 0, 1, 983052, 0, 1, 983053, 0, 1, 983054, 0, 1, 983055, 0, 1, 983056, 0, 1, 983057, 0, 1, 983058, 0, 1, 983059, 0, 1, 983060, 0, 1, 983061, 0, 1, 983062, 0, 1, 983063, 0, 1, 983064, 0, 1, 983065, 0, 1, 983066, 0, 1, 983067, 0, 1, 983068, 0, 1, 983069, 0, 1, 983070, 0, 1, 983071, 0, 1, 983072, 0, 2, 1114111, 0, 65536, 1048576, 0, 65537, 1048577, 0, 65537, 1048578, 0, 65537, 1048579, 0, 65537, 1048580, 0, 65537, 1048581, 0, 65537, 1048582, 0, 65537, 1048583, 0, 65537, 1048584, 0, 65537, 1048585, 0, 65537, 1048586, 0, 65537, 1048587, 0, 65537, 1048588, 0, 65537, 1048589, 0, 65537, 1048590, 0, 65537, 1048591, 0, 65537, 1048592, 0, 65537, 1048593, 0, 65537, 1048594, 0, 65537, 1048595, 0, 65537, 1048596, 0, 65537, 1048597, 0, 65537, 1048598, 0, 65537, 1048599, 0, 65537, 1048600, 0, 65537, 1048601, 0, 65537, 1048602, 0, 65537, 1048603, 0, 65537, 1048604, 0, 65537, 1048605, 0, 65537, 1048606, 0, 65537, 1048607, 0, 65537, 1048608, 0, 65538, 1179647, 0, 65536, 1114112, 0, 65537, 1114113, 0, 65537, 1114114, 0, 65537, 1114115, 0, 65537, 1114116, 0, 65537, 1114117, 0, 65537, 1114118, 0, 65537, 1114119, 0, 65537, 1114120, 0, 65537, 1114121, 0, 65537, 1114122, 0, 65537, 1114123, 0, 65537, 1114124, 0, 65537, 1114125, 0, 65537, 1114126, 0, 65537, 1114127, 0, 65537, 1114128, 0, 65537, 1114129, 0, 65537, 1114130, 0, 65537, 1114131, 0, 65537, 1114132, 0, 65537, 1114133, 0, 65537, 1114134, 0, 65537, 1114135, 0, 65537, 1114136, 0, 65537, 1114137, 0, 65537, 1114138, 0, 65537, 1114139, 0, 65537, 1114140, 0, 65537, 1114141, 0, 65537, 1114142, 0, 65537, 1114143, 0, 65537, 1114144, 0, 65538, 1245183, 0, 65536, 1179648, 0, 65537, 1179649, 0, 65537, 1179650, 0, 65537, 1179651, 0, 65537, 1179652, 0, 65537, 1179653, 0, 65537, 1179654, 0, 65537, 1179655, 0, 65537, 1179656, 0, 65537, 1179657, 0, 65537, 1179658, 0, 65537, 1179659, 0, 65537, 1179660, 0, 65537, 1179661, 0, 65537, 1179662, 0, 65537, 1179663, 0, 65537, 1179664, 0, 65537, 1179665, 0, 65537, 1179666, 0, 65537, 1179667, 0, 65537, 1179668, 0, 65537, 1179669, 0, 65537, 1179670, 0, 65537, 1179671, 0, 65537, 1179672, 0, 65537, 1179673, 0, 65537, 1179674, 0, 65537, 1179675, 0, 65537, 1179676, 0, 65537, 1179677, 0, 65537, 1179678, 0, 65537, 1179679, 0, 65537, 1179680, 0, 65538, 1310719, 0, 131072, 1245184, 0, 131073, 1245185, 0, 131073, 1245186, 0, 131073, 1245187, 0, 131073, 1245188, 0, 131073, 1245189, 0, 131073, 1245190, 0, 131073, 1245191, 0, 131073, 1245192, 0, 131073, 1245193, 0, 131073, 1245194, 0, 131073, 1245195, 0, 131073, 1245196, 0, 131073, 1245197, 0, 131073, 1245198, 0, 131073, 1245199, 0, 131073, 1245200, 0, 131073, 1245201, 0, 131073, 1245202, 0, 131073, 1245203, 0, 131073, 1245204, 0, 131073, 1245205, 0, 131073, 1245206, 0, 131073, 1245207, 0, 131073, 1245208, 0, 131073, 1245209, 0, 131073, 1245210, 0, 131073, 1245211, 0, 131073, 1245212, 0, 131073, 1245213, 0, 131073, 1245214, 0, 131073, 1245215, 0, 131073, 1245216, 0, 131074 )
+
+[node name="mask" type="Node2D" parent="Ground2"]
+
+[node name="Sprite" type="Sprite" parent="Ground2/mask"]
+position = Vector2( -32, 480 )
+texture = SubResource( 7 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="Ground2/mask"]
+position = Vector2( -32, 512 )
+scale = Vector2( 1, 4 )
+texture = SubResource( 8 )
+centered = false
+
+[node name="mask2" type="Node2D" parent="Ground2"]
+position = Vector2( 1056, 0 )
+
+[node name="Sprite" type="Sprite" parent="Ground2/mask2"]
+position = Vector2( -32, 480 )
+texture = SubResource( 7 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="Ground2/mask2"]
+position = Vector2( -32, 512 )
+scale = Vector2( 1, 4 )
+texture = SubResource( 8 )
+centered = false
+
+[node name="Front" type="Node2D" parent="Ground2"]
+
+[node name="Tree" type="Node2D" parent="Ground2/Front"]
+position = Vector2( 332.8, 421.015 )
+
+[node name="font_tree" parent="Ground2/Front/Tree" instance=ExtResource( 14 )]
+
+[node name="Sprite" type="Sprite" parent="Ground2/Front/Tree"]
+position = Vector2( 4, 32 )
+texture = ExtResource( 15 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 64 )
+
+[node name="Tree2" type="Node2D" parent="Ground2/Front"]
+position = Vector2( 762.128, 421.015 )
+
+[node name="font_tree" parent="Ground2/Front/Tree2" instance=ExtResource( 14 )]
+
+[node name="Sprite" type="Sprite" parent="Ground2/Front/Tree2"]
+position = Vector2( 4, 32 )
+texture = ExtResource( 15 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 64 )
+
+[node name="GameUI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Control" parent="GameUI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -90.0
+margin_top = -20.0
+margin_right = 90.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 100, 20 )
+size_flags_horizontal = 6
+script = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+click_type = 1
+
+[node name="Sprite" type="Sprite" parent="GameUI/StartButton"]
+position = Vector2( 4, 2 )
+scale = Vector2( 1.4, 1.4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Label" type="Label" parent="GameUI/StartButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 9 )
+text = "开始游戏"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadButton" type="Control" parent="GameUI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -90.0
+margin_top = 34.7626
+margin_right = 90.0
+margin_bottom = 74.7626
+rect_pivot_offset = Vector2( 100, 20 )
+size_flags_horizontal = 6
+script = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+click_type = 1
+
+[node name="Sprite" type="Sprite" parent="GameUI/LoadButton"]
+position = Vector2( 4, 2 )
+scale = Vector2( 1.4, 1.4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Label" type="Label" parent="GameUI/LoadButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 9 )
+text = "加载游戏"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitButton" type="Control" parent="GameUI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -90.0
+margin_top = 93.0869
+margin_right = 90.0
+margin_bottom = 133.087
+rect_pivot_offset = Vector2( 100, 20 )
+size_flags_horizontal = 6
+script = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+click_type = 1
+
+[node name="Sprite" type="Sprite" parent="GameUI/ExitButton"]
+position = Vector2( 4, 2 )
+scale = Vector2( 1.4, 1.4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Label" type="Label" parent="GameUI/ExitButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 9 )
+text = "退出游戏"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="GameUI"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -104.487
+margin_top = 31.4118
+margin_right = 95.5126
+margin_bottom = 241.412
+rect_min_size = Vector2( 200, 200 )
+custom_fonts/font = SubResource( 10 )
+text = "高中生
+异世界
+奇妙冒险"
+align = 1
+valign = 1

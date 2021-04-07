@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assert/alta_resource/ui_texture/ui.sprites/ui_itme_grid_single.tres" type="Texture" id=1]
+[ext_resource path="res://game/components/ui_components/ItemGraid.gd" type="Script" id=2]
+
+
+[node name="ItemGrid" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1004.0
+margin_bottom = -560.0
+rect_min_size = Vector2( 40, 40 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
