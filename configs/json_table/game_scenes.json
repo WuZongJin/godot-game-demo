@@ -3,6 +3,8 @@
 "rows":{
 "1":[1, "enter_game_scene", "base_ui/"], 
 "2":[2, "game_title_scene", "base_ui/"], 
-"3":[3, "scene_1", ""]
+"3":[3, "scene_1", ""], 
+"4":[4, "player_home", "player_home/"], 
+"5":[5, "lord_castle_scene", "lord_castle/"]
 }
 }

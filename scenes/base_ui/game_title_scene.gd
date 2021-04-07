@@ -27,7 +27,8 @@ func _ui_animation():
 	anima.play()
 
 func _on_start_btn_press():
-	print("sssss")
+	SceneManager.close_scene(self.name)
+	SceneManager.open_scene("player_home")
 	pass
 
 func _on_load_btn_press():

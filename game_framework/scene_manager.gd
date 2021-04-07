@@ -49,6 +49,8 @@ func change_scene(from_scene, to_scene):
 	pass	
 
 func added_scene_to_game(scene, layer = GameLayerConstant.SCENELayer):
+	if not main:
+		create_default_main()
 	match layer:
 		GameLayerConstant.DOWNLayer:
 			main.down_layer.add_child(scene)
@@ -57,7 +59,7 @@ func added_scene_to_game(scene, layer = GameLayerConstant.SCENELayer):
 		GameLayerConstant.WINDOWLayer:
 			main.window_layer.add_child(scene)
 		GameLayerConstant.POPUPLayer:
-			main.window_layer.add_child(scene)
+			main.popup_layer.add_child(scene)
 
 
 func load_scene(scene_name, additive = false):
@@ -65,6 +67,14 @@ func load_scene(scene_name, additive = false):
 	to_load = load(scene_name)
 	
 
+func add_dialog(dialog):
+	if not main:
+		create_default_main()
+	main.popup_layer.call_deferred("add_child", dialog)
 
-
+func create_default_main():
+	var main_res = load("res://main.tscn")
+	var main_ins = main_res.instance()
+	main_ins.game_start = false
+	get_tree().root.add_child(main_ins)
 
