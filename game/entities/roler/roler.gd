@@ -3,7 +3,7 @@ extends Node2D
 const texture_dir = "res://assert/textures/roler_texture/"
 var textures
 var texture_index = 0
-var animations = ["idle", "walk"]
+var animations = ["idle", "walk", "robe_idle"]
 var anime_index = 0
 
 
