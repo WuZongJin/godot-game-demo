@@ -87,12 +87,17 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "EquipmentTypeConstant",
 "language": "GDScript",
-"path": "res://game/entities/equipments/equipment_type_constant.gd"
+"path": "res://game/const/equipment_type_constant.gd"
 }, {
 "base": "Reference",
 "class": "GameLayerConstant",
 "language": "GDScript",
 "path": "res://game/const/game_layer_constant.gd"
+}, {
+"base": "Node",
+"class": "GameSaveSystem",
+"language": "GDScript",
+"path": "res://game_framework/game_save_system.gd"
 }, {
 "base": "BaseTable",
 "class": "GameScenesTable",
@@ -127,12 +132,17 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "ItemTypeConstant",
 "language": "GDScript",
-"path": "res://game/entities/item_type_constant.gd"
+"path": "res://game/const/item_type_constant.gd"
 }, {
 "base": "Node",
 "class": "Main",
 "language": "GDScript",
 "path": "res://main.gd"
+}, {
+"base": "Reference",
+"class": "RarityTypeConstant",
+"language": "GDScript",
+"path": "res://game/const/rarity_type_constant.gd"
 }, {
 "base": "Reference",
 "class": "SubscriptionList",
@@ -157,6 +167,7 @@ _global_script_class_icons={
 "DialogicUtil": "",
 "EquipmentTypeConstant": "",
 "GameLayerConstant": "",
+"GameSaveSystem": "",
 "GameScenesTable": "",
 "GitAPI": "",
 "Item": "",
@@ -165,6 +176,7 @@ _global_script_class_icons={
 "ItemTable": "",
 "ItemTypeConstant": "",
 "Main": "",
+"RarityTypeConstant": "",
 "SubscriptionList": ""
 }
 
@@ -177,6 +189,7 @@ config/icon="res://icon.png"
 [autoload]
 
 GameSetting="*res://game_framework/game_setting.gd"
+UserData="*res://game_framework/user_data.gd"
 GameUtils="*res://game_framework/game_utils.gd"
 GameTableManager="*res://game_framework/game_table_manager.gd"
 GameManager="*res://game_framework/game_manager.gd"
@@ -188,7 +201,7 @@ DialogicSingleton="*res://addons/dialogic/Other/DialogicSingleton.gd"
 [display]
 
 window/stretch/mode="2d"
-window/stretch/aspect="keep"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 
