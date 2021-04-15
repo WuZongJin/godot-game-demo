@@ -31,7 +31,9 @@ var exp_point: int 											#经验值
 var next_level_point: int									#下一等级所需经验值
 var level: int												#等级
 
-
+#角色属性
+var rarity: RarityTypeConstant								#稀有度
+var start_level: int											#星级
 
 #属性的SetGet
 func set_health(value):
