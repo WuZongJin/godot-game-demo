@@ -23,8 +23,6 @@
 [ext_resource path="res://assert/textures/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 02.png" type="Texture" id=21]
 [ext_resource path="res://game/components/ui_components_tool/base_button.gd" type="Script" id=22]
 
-
-
 [sub_resource type="Animation" id=1]
 resource_name = "anima"
 length = 0.6
@@ -294,6 +292,7 @@ position = Vector2( 93.4693, 471.098 )
 
 [node name="Sprite" type="AnimatedSprite" parent="Player"]
 frames = SubResource( 5 )
+frame = 3
 playing = true
 
 [node name="Ground1" type="Node2D" parent="."]
